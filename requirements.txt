@@ -1,0 +1,10 @@
+flask
+flask-cors
+transformers
+sentence-transformers
+torch
+faiss-cpu
+numpy
+pickle5
+requests
+tqdm
