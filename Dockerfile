@@ -4,15 +4,15 @@ FROM python:3.12
 # تعيين مجلد العمل داخل الحاوية
 WORKDIR /detector
 
-# نسخ ملفات المشروع إلى الحاوية
-COPY . /detector
+# نسخ ملف المتطلبات أولًا (للاستفادة من الكاش في Docker)
+COPY requirements.txt .
 
 # تثبيت المتطلبات
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
 
-# إفشاء البورت المستخدم بواسطة Flask
-EXPOSE 5000
+# نسخ باقي ملفات المشروع
+COPY . .
 
 # أمر التشغيل
 CMD ["python", "detector.py"]
