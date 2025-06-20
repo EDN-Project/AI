@@ -1,10 +1,4 @@
 flask
-flask-cors
-transformers
-sentence-transformers
-torch
-faiss-cpu
+ultralytics
 numpy
-pickle5
-requests
-tqdm
+opencv-python
